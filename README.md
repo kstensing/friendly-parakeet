@@ -30,7 +30,7 @@ Click this [LINK](https://kstensing.github.io/friendly-parakeet/) for the landin
 
 The landing page should resemble the image below: 
 
-![Landing Page](assets/images/capture.JPG)
+![Landing Page](Assets/images/Capture.JPG)
 
 
 
