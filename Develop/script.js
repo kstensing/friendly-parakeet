@@ -1,10 +1,7 @@
 // Assignment code here
-// function to generate a random numeric value
-//var randomNumber = function(min, max) {
-  //var value = Math.floor(Math.random() * (max - min + 1) + min);
-
-  //return value;
-//};
+var letters = "abcdefghijklmnopqrstuvwxyz";
+var numbers = "0123456789";
+var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"
 
 var generatePassword = function() {
   
@@ -34,6 +31,7 @@ var generatePassword = function() {
 
     if (specialChar) {
       console.log("include special characters");
+
     } else {
       console.log("do not include special characters");
     }
@@ -65,15 +63,14 @@ var generatePassword = function() {
     console.log("do not include lowercase characters");
   }
 
-for ( var i = 0; i < length; i++) {
-  var randomNumber = Math.floor(Math.random() * letters.length);
-  console.log(randomNumber);
-}
+for (var i = 0; i < range; i++) {
+  var randomNumber = Math.floor(Math.random() * 10);
+    console.log(randomNumber);
+  }
+ 
+  password = randomNumber;
 
-var letters = "abcdefghijklmnopqrstuvwxyz";
-var numbers = "0123456789";
-var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"
-//var password = "";
+return password;
 };
 
 
