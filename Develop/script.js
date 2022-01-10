@@ -1,7 +1,8 @@
 // Assignment code here
 var letters = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
-var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"
+var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
+var all = "!#$%&()*+,-./:;<=>?@[]^_`{|}~0123456789abcdefghijklmnopqrstuvwxyz";
 
 var generatePassword = function() {
   
@@ -25,8 +26,9 @@ var generatePassword = function() {
     }
   }
   
-
+var specialChar, numericChar, upperChar, lowerChar
   //ask about including special characters
+  while (!specialChar && !numericChar && !upperChar && !lowerChar) {
   var specialChar = window.confirm("Click OK to confirm including special characters.");
 
     if (specialChar) {
@@ -62,15 +64,35 @@ var generatePassword = function() {
   } else {
     console.log("do not include lowercase characters");
   }
+  
+  if (!specialChar && !numericChar && !upperChar && !lowerChar) {
+    window.alert("You must select at least one character type.");
+  } 
+}
 
-for (var i = 0; i < range; i++) {
-  var randomNumber = Math.floor(Math.random() * 10);
-    console.log(randomNumber);
+  var inputChar = "";
+  if (specialChar) {
+    inputChar += special;   
+  } 
+  if (numericChar) {
+    inputChar += numbers;
+  } 
+  if (upperChar) {
+    inputChar += letters.toUpperCase();
+  } 
+  if (lowerChar) {
+    inputChar += letters.toLowerCase();
+  }
+
+  var password = "";
+  for (var i = 0; i < range; i++) {
+    //var randomNumber = Math.floor(Math.random() * 10);
+    var randomSpecial = inputChar.charAt(Math.floor(Math.random() * inputChar.length));
+    
+    password += randomSpecial; 
   }
  
-  password = randomNumber;
-
-return password;
+  return password;
 };
 
 
