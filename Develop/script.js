@@ -2,7 +2,6 @@
 var letters = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var special = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
-var all = "!#$%&()*+,-./:;<=>?@[]^_`{|}~0123456789abcdefghijklmnopqrstuvwxyz";
 
 var generatePassword = function() {
   
@@ -26,49 +25,49 @@ var generatePassword = function() {
     }
   }
   
-var specialChar, numericChar, upperChar, lowerChar
+  var specialChar, numericChar, upperChar, lowerChar;
   //ask about including special characters
   while (!specialChar && !numericChar && !upperChar && !lowerChar) {
-  var specialChar = window.confirm("Click OK to confirm including special characters.");
-
-    if (specialChar) {
-      console.log("include special characters");
-
-    } else {
-      console.log("do not include special characters");
-    }
-
-      //ask about including numeric characters
-  var numericChar = window.confirm("Click OK to confirm including numeric characters.");
-
-    if (numericChar) {
-      console.log("include numeric characters");
-   } else {
-      console.log("do not include numeric characters");
-    }
-
-    //ask about including uppercase characters
-  var upperChar = window.confirm("Click OK to confirm including uppercase characters.");
-
-    if (upperChar) {
-      console.log("include uppercase characters");
-    } else {
-      console.log("do not include uppercase characters");
-    }
-
-    //ask about including lowercase characters
-  var lowerChar = window.confirm("Click OK to confirm including lowercase characters.");
-
-  if (lowerChar) {
-    console.log("include lowercase characters");
-  } else {
-    console.log("do not include lowercase characters");
-  }
+    specialChar = window.confirm("Click OK to confirm including special characters.");
   
-  if (!specialChar && !numericChar && !upperChar && !lowerChar) {
-    window.alert("You must select at least one character type.");
-  } 
-}
+      if (specialChar) {
+        console.log("include special characters");
+  
+      } else {
+        console.log("do not include special characters");
+      }
+  
+        //ask about including numeric characters
+    numericChar = window.confirm("Click OK to confirm including numeric characters.");
+  
+      if (numericChar) {
+        console.log("include numeric characters");
+      } else {
+        console.log("do not include numeric characters");
+      }
+  
+      //ask about including uppercase characters
+    upperChar = window.confirm("Click OK to confirm including uppercase characters.");
+  
+      if (upperChar) {
+        console.log("include uppercase characters");
+      } else {
+        console.log("do not include uppercase characters");
+      }
+  
+      //ask about including lowercase characters
+    lowerChar = window.confirm("Click OK to confirm including lowercase characters.");
+  
+      if (lowerChar) {
+        console.log("include lowercase characters");
+      } else {
+      console.log("do not include lowercase characters");
+      }
+    
+    if (!specialChar && !numericChar && !upperChar && !lowerChar) {
+      window.alert("You must select at least one character type.");
+    } 
+  }
 
   var inputChar = "";
   if (specialChar) {
@@ -86,10 +85,9 @@ var specialChar, numericChar, upperChar, lowerChar
 
   var password = "";
   for (var i = 0; i < range; i++) {
-    //var randomNumber = Math.floor(Math.random() * 10);
-    var randomSpecial = inputChar.charAt(Math.floor(Math.random() * inputChar.length));
+    var randomChar = inputChar.charAt(Math.floor(Math.random() * inputChar.length));
     
-    password += randomSpecial; 
+    password += randomChar; 
   }
  
   return password;
